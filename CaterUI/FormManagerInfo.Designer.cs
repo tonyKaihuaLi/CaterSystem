@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label6 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.btnRemove = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,38 +40,28 @@
             this.txtPwd = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvList = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label6.Location = new System.Drawing.Point(40, 256);
-            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(394, 24);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "这里只是提示，与实际密码位数无关";
-            // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(96, 58);
+            this.txtId.Location = new System.Drawing.Point(121, 58);
             this.txtId.Margin = new System.Windows.Forms.Padding(6);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(336, 35);
+            this.txtId.Size = new System.Drawing.Size(311, 35);
             this.txtId.TabIndex = 12;
-            this.txtId.Text = "添加时无编号";
+            this.txtId.Text = "Empty";
             // 
             // btnRemove
             // 
@@ -81,7 +70,7 @@
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(336, 46);
             this.btnRemove.TabIndex = 4;
-            this.btnRemove.Text = "删除选中的店员";
+            this.btnRemove.Text = "Delete";
             this.btnRemove.UseVisualStyleBackColor = true;
             // 
             // label4
@@ -91,14 +80,13 @@
             this.label4.Location = new System.Drawing.Point(6, 450);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(418, 24);
+            this.label4.Size = new System.Drawing.Size(0, 24);
             this.label4.TabIndex = 11;
-            this.label4.Text = "提示：双击表格项可以在此处进行修改";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 78);
+            this.label5.Location = new System.Drawing.Point(6, 61);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 24);
@@ -112,10 +100,10 @@
             this.rb2.Location = new System.Drawing.Point(226, 312);
             this.rb2.Margin = new System.Windows.Forms.Padding(6);
             this.rb2.Name = "rb2";
-            this.rb2.Size = new System.Drawing.Size(89, 28);
+            this.rb2.Size = new System.Drawing.Size(101, 28);
             this.rb2.TabIndex = 10;
             this.rb2.TabStop = true;
-            this.rb2.Text = "店员";
+            this.rb2.Text = "Stuff";
             this.rb2.UseVisualStyleBackColor = true;
             // 
             // rb1
@@ -124,9 +112,9 @@
             this.rb1.Location = new System.Drawing.Point(96, 312);
             this.rb1.Margin = new System.Windows.Forms.Padding(6);
             this.rb1.Name = "rb1";
-            this.rb1.Size = new System.Drawing.Size(89, 28);
+            this.rb1.Size = new System.Drawing.Size(125, 28);
             this.rb1.TabIndex = 9;
-            this.rb1.Text = "经理";
+            this.rb1.Text = "Manager";
             this.rb1.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -137,7 +125,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 24);
             this.label3.TabIndex = 8;
-            this.label3.Text = "类型：";
+            this.label3.Text = "Type：";
             // 
             // btnCancel
             // 
@@ -146,7 +134,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 46);
             this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "取消";
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnSave
@@ -156,16 +144,17 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(150, 46);
             this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "添加";
+            this.btnSave.Text = "Add";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtPwd
             // 
-            this.txtPwd.Location = new System.Drawing.Point(96, 204);
+            this.txtPwd.Location = new System.Drawing.Point(121, 204);
             this.txtPwd.Margin = new System.Windows.Forms.Padding(6);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.PasswordChar = '*';
-            this.txtPwd.Size = new System.Drawing.Size(336, 35);
+            this.txtPwd.Size = new System.Drawing.Size(311, 35);
             this.txtPwd.TabIndex = 3;
             // 
             // groupBox2
@@ -200,6 +189,29 @@
             this.dgvList.Size = new System.Drawing.Size(766, 524);
             this.dgvList.TabIndex = 0;
             this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
+            this.dgvList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellDoubleClick);
+            this.dgvList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvList_CellFormatting);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MId";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "MName";
+            this.Column2.HeaderText = "UserName";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "MType";
+            this.Column3.HeaderText = "Type";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // label2
             // 
@@ -207,9 +219,9 @@
             this.label2.Location = new System.Drawing.Point(2, 210);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 24);
+            this.label2.Size = new System.Drawing.Size(130, 24);
             this.label2.TabIndex = 2;
-            this.label2.Text = "密码：";
+            this.label2.Text = "Password：";
             // 
             // label1
             // 
@@ -223,10 +235,10 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(96, 132);
+            this.txtName.Location = new System.Drawing.Point(121, 132);
             this.txtName.Margin = new System.Windows.Forms.Padding(6);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(336, 35);
+            this.txtName.Size = new System.Drawing.Size(311, 35);
             this.txtName.TabIndex = 1;
             // 
             // groupBox1
@@ -252,28 +264,19 @@
             this.groupBox1.Size = new System.Drawing.Size(452, 558);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "添加\\修改";
+            this.groupBox1.Text = "Update";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // Column1
+            // label6
             // 
-            this.Column1.DataPropertyName = "MId";
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "MName";
-            this.Column2.HeaderText = "UserName";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "MType";
-            this.Column3.HeaderText = "Type";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label6.Location = new System.Drawing.Point(40, 256);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(394, 24);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "这里只是提示，与实际密码位数无关";
             // 
             // FormManagerInfo
             // 
@@ -294,8 +297,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Label label4;
@@ -315,5 +316,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Label label6;
     }
 }
