@@ -26,5 +26,10 @@ namespace CaterBll
         {
             return managerInfoD.Update(managerInfo) > 0;
         }
+
+        public bool Remove(int id)
+        {
+            return managerInfoD.Delete(id) > 0;
+        }
     }
 }

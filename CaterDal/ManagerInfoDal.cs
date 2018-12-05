@@ -66,5 +66,12 @@ namespace CaterDal
 
             return SqliteHelper.ExecuteNonQuery(sql, listParameters.ToArray());
         }
+
+        public int Delete(int id)
+        {
+            string sql = "delete from ManagerInfo where mid =@id";
+            SQLiteParameter parameter=new SQLiteParameter("@id", id);
+            return SqliteHelper.ExecuteNonQuery(sql, parameter);
+        }
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CaterBll;
 using CaterModel;
+using static System.Windows.Forms.MessageBoxButtons;
 
 namespace CaterUI
 {
@@ -112,6 +113,38 @@ namespace CaterUI
             txtPwd.Text = "This is the orginal pwd";
 
             btnSave.Text = "edit";
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtId.Text = "This is the orginal pwd";
+            txtName.Text = "";
+            txtPwd.Text = "";
+            rb2.Checked = true;
+            btnSave.Text = "Add";
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            var rows = dgvList.SelectedRows;
+            if (rows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Are you sure about that?", " ",MessageBoxButtons.OKCancel);
+                if (result == DialogResult.Cancel)
+                {
+                    return;
+                }
+
+                int id = int.Parse(rows[0].Cells[0].Value.ToString());
+                if (managerInfoBll.Remove(id))
+                {
+                    LoadList();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Make a selection");
+            }
         }
     }
 }
