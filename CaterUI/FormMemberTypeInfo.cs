@@ -22,6 +22,8 @@ namespace CaterUI
             InitializeComponent();
         }
 
+        private DialogResult resultDia = DialogResult.Cancel;
+
         private void FormMemberTypeInfo_Load(object sender, EventArgs e)
         {
             ListLoad();
@@ -78,6 +80,8 @@ namespace CaterUI
             txtDiscount.Text = "";
             txtTitle.Text = "";
             btnSave.Text = "ADD";
+
+            resultDia = DialogResult.OK;
         }
 
         private void dgvList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -109,11 +113,18 @@ namespace CaterUI
             {
                 MessageBox.Show("Something wrong");
             }
+
+            resultDia = DialogResult.OK;
         }
 
         private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void FormMemberTypeInfo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.DialogResult = resultDia;
         }
     }
 }

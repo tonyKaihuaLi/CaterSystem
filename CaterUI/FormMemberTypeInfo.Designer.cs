@@ -234,6 +234,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "FormMemberTypeInfo";
             this.Text = "Membership type";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMemberTypeInfo_FormClosing);
             this.Load += new System.EventHandler(this.FormMemberTypeInfo_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();

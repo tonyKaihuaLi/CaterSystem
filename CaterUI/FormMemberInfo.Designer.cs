@@ -87,7 +87,7 @@
             this.groupBox3.Size = new System.Drawing.Size(352, 664);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "添加\\修改";
+            this.groupBox3.Text = "Update";
             // 
             // btnRemove
             // 
@@ -96,8 +96,9 @@
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(306, 50);
             this.btnRemove.TabIndex = 19;
-            this.btnRemove.Text = "删除选中的行数据";
+            this.btnRemove.Text = "Delete";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // label9
             // 
@@ -106,9 +107,8 @@
             this.label9.Location = new System.Drawing.Point(18, 520);
             this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(298, 24);
+            this.label9.Size = new System.Drawing.Size(0, 24);
             this.label9.TabIndex = 15;
-            this.label9.Text = "提示：双击表格项进行修改";
             // 
             // btnAddType
             // 
@@ -117,8 +117,9 @@
             this.btnAddType.Name = "btnAddType";
             this.btnAddType.Size = new System.Drawing.Size(218, 50);
             this.btnAddType.TabIndex = 13;
-            this.btnAddType.Text = "类型管理";
+            this.btnAddType.Text = "Type Management";
             this.btnAddType.UseVisualStyleBackColor = true;
+            this.btnAddType.Click += new System.EventHandler(this.btnAddType_Click);
             // 
             // btnCancel
             // 
@@ -127,8 +128,9 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(140, 50);
             this.btnCancel.TabIndex = 12;
-            this.btnCancel.Text = "取消";
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -137,8 +139,9 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(140, 50);
             this.btnSave.TabIndex = 11;
-            this.btnSave.Text = "添加";
+            this.btnSave.Text = "Add";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // ddlType
             // 
@@ -182,7 +185,7 @@
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(214, 35);
             this.txtId.TabIndex = 5;
-            this.txtId.Text = "添加时无编号";
+            this.txtId.Text = "Empty";
             // 
             // label7
             // 
@@ -190,9 +193,9 @@
             this.label7.Location = new System.Drawing.Point(18, 392);
             this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(106, 24);
+            this.label7.Size = new System.Drawing.Size(118, 24);
             this.label7.TabIndex = 4;
-            this.label7.Text = "余  额：";
+            this.label7.Text = "Balance：";
             // 
             // label6
             // 
@@ -202,7 +205,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 24);
             this.label6.TabIndex = 3;
-            this.label6.Text = "手机号：";
+            this.label6.Text = "Mobile：";
             // 
             // label5
             // 
@@ -210,9 +213,9 @@
             this.label5.Location = new System.Drawing.Point(18, 194);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 24);
+            this.label5.Size = new System.Drawing.Size(82, 24);
             this.label5.TabIndex = 2;
-            this.label5.Text = "类  型：";
+            this.label5.Text = "Type：";
             // 
             // label4
             // 
@@ -220,9 +223,9 @@
             this.label4.Location = new System.Drawing.Point(18, 126);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 24);
+            this.label4.Size = new System.Drawing.Size(82, 24);
             this.label4.TabIndex = 1;
-            this.label4.Text = "姓  名：";
+            this.label4.Text = "Name：";
             // 
             // label3
             // 
@@ -230,9 +233,9 @@
             this.label3.Location = new System.Drawing.Point(14, 64);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 24);
+            this.label3.Size = new System.Drawing.Size(58, 24);
             this.label3.TabIndex = 0;
-            this.label3.Text = "编  号：";
+            this.label3.Text = "ID：";
             // 
             // dgvList
             // 
@@ -255,6 +258,7 @@
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(1096, 856);
             this.dgvList.TabIndex = 0;
+            this.dgvList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellDoubleClick);
             // 
             // groupBox2
             // 
@@ -270,7 +274,7 @@
             this.groupBox2.Size = new System.Drawing.Size(352, 220);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "搜索";
+            this.groupBox2.Text = "Search";
             // 
             // btnSearchAll
             // 
@@ -279,8 +283,9 @@
             this.btnSearchAll.Name = "btnSearchAll";
             this.btnSearchAll.Size = new System.Drawing.Size(306, 50);
             this.btnSearchAll.TabIndex = 5;
-            this.btnSearchAll.Text = "显示全部";
+            this.btnSearchAll.Text = "Show All";
             this.btnSearchAll.UseVisualStyleBackColor = true;
+            this.btnSearchAll.Click += new System.EventHandler(this.btnSearchAll_Click);
             // 
             // txtPhoneSearch
             // 
@@ -289,6 +294,7 @@
             this.txtPhoneSearch.Name = "txtPhoneSearch";
             this.txtPhoneSearch.Size = new System.Drawing.Size(214, 35);
             this.txtPhoneSearch.TabIndex = 3;
+            this.txtPhoneSearch.Leave += new System.EventHandler(this.txtPhoneSearch_Leave);
             // 
             // label2
             // 
@@ -298,7 +304,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 24);
             this.label2.TabIndex = 2;
-            this.label2.Text = "手机号：";
+            this.label2.Text = "Mobile：";
             // 
             // txtNameSearch
             // 
@@ -307,6 +313,7 @@
             this.txtNameSearch.Name = "txtNameSearch";
             this.txtNameSearch.Size = new System.Drawing.Size(216, 35);
             this.txtNameSearch.TabIndex = 1;
+            this.txtNameSearch.TextChanged += new System.EventHandler(this.txtNameSearch_TextChanged);
             // 
             // label1
             // 
@@ -314,9 +321,9 @@
             this.label1.Location = new System.Drawing.Point(14, 42);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 24);
+            this.label1.Size = new System.Drawing.Size(82, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "姓  名：";
+            this.label1.Text = "Name：";
             // 
             // groupBox1
             // 
@@ -328,7 +335,7 @@
             this.groupBox1.Size = new System.Drawing.Size(1108, 896);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "列表";
+            this.groupBox1.Text = "List";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // Column1
