@@ -17,9 +17,21 @@ namespace CaterUI
     {
         ManagerInfoBll managerInfoBll = new ManagerInfoBll();
 
-        public FormManagerInfo()
+        private FormManagerInfo()
         {
             InitializeComponent();
+        }
+
+        private static FormManagerInfo _form;
+
+        public static FormManagerInfo Create()
+        {
+            if (_form == null)
+            {
+                _form= new FormManagerInfo();
+            }
+
+            return _form;
         }
 
         private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -145,6 +157,11 @@ namespace CaterUI
             {
                 MessageBox.Show("Make a selection");
             }
+        }
+
+        private void FormManagerInfo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _form = null;
         }
     }
 }
