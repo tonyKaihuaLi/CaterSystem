@@ -286,6 +286,7 @@
             this.ddlTypeSearch.Name = "ddlTypeSearch";
             this.ddlTypeSearch.Size = new System.Drawing.Size(240, 32);
             this.ddlTypeSearch.TabIndex = 8;
+            this.ddlTypeSearch.SelectedIndexChanged += new System.EventHandler(this.ddlTypeSearch_SelectedIndexChanged);
             // 
             // btnSearchAll
             // 
@@ -314,6 +315,7 @@
             this.txtTitleSearch.Name = "txtTitleSearch";
             this.txtTitleSearch.Size = new System.Drawing.Size(242, 35);
             this.txtTitleSearch.TabIndex = 1;
+            this.txtTitleSearch.Leave += new System.EventHandler(this.txtTitleSearch_Leave);
             // 
             // label3
             // 

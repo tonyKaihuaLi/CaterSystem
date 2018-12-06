@@ -64,8 +64,9 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(140, 50);
             this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "取消";
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtTitle
             // 
@@ -83,7 +84,7 @@
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(236, 35);
             this.txtId.TabIndex = 4;
-            this.txtId.Text = "添加时无编号";
+            this.txtId.Text = "Empty";
             // 
             // btnSave
             // 
@@ -92,8 +93,9 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(140, 50);
             this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "添加";
+            this.btnSave.Text = "ADD";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label2
             // 
@@ -133,6 +135,7 @@
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(508, 376);
             this.dgvList.TabIndex = 0;
+            this.dgvList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellDoubleClick);
             // 
             // Column1
             // 
@@ -176,6 +179,7 @@
             this.btnRemove.TabIndex = 17;
             this.btnRemove.Text = "删除选中的行数据";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // groupBox1
             // 

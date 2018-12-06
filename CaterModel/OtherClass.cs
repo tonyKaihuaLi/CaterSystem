@@ -11,4 +11,9 @@ namespace CaterModel
         public string MTypeTitle { get; set; }
     }
 
+    public partial class DishInfo
+    {
+        public string DTypeTitle { get; set; }
+    }
+
 }

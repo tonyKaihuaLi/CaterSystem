@@ -16,5 +16,20 @@ namespace CaterBll
         {
             return dishTypeInfoDal.GetList();
         }
+
+        public bool Add(DishTypeInfo dishTypeInfo)
+        {
+            return dishTypeInfoDal.Insert(dishTypeInfo)>0;
+        }
+
+        public bool Update(DishTypeInfo dishTypeInfo)
+        {
+            return dishTypeInfoDal.Update(dishTypeInfo) > 0;
+        }
+
+        public bool Delete(int id)
+        {
+            return dishTypeInfoDal.Delete(id) > 0;
+        }
     }
 }
