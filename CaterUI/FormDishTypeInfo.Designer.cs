@@ -202,6 +202,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormDishTypeInfo";
             this.Text = "FormDishTypeInfo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDishTypeInfo_FormClosing);
             this.Load += new System.EventHandler(this.FormDishTypeInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.groupBox2.ResumeLayout(false);

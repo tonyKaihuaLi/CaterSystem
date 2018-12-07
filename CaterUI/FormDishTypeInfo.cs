@@ -21,6 +21,8 @@ namespace CaterUI
 
         DishTypeInfoBll dishTypeInfoBll = new DishTypeInfoBll();
 
+        private DialogResult result = DialogResult.Cancel;
+
         private void FormDishTypeInfo_Load(object sender, EventArgs e)
         {
             LoadList();
@@ -70,6 +72,10 @@ namespace CaterUI
 
             txtId.Text = "Empty";
             txtTitle.Text = "";
+            btnSave.Text = "ADD";
+
+            this.result = DialogResult.OK;
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -108,6 +114,14 @@ namespace CaterUI
             {
                 return;
             }
+
+            this.result = DialogResult.OK;
+        }
+
+        private void FormDishTypeInfo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.DialogResult = this.result;
+
         }
     }
 }

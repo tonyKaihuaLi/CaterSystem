@@ -82,6 +82,7 @@
             this.btnRemove.TabIndex = 16;
             this.btnRemove.Text = "删除选中的行数据";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // label9
             // 
@@ -103,6 +104,7 @@
             this.btnAddType.TabIndex = 13;
             this.btnAddType.Text = "分类管理";
             this.btnAddType.UseVisualStyleBackColor = true;
+            this.btnAddType.Click += new System.EventHandler(this.btnAddType_Click);
             // 
             // btnCancel
             // 
@@ -113,6 +115,7 @@
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -123,6 +126,7 @@
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "添加";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // ddlTypeAdd
             // 
@@ -185,6 +189,7 @@
             this.txtTitleSave.Name = "txtTitleSave";
             this.txtTitleSave.Size = new System.Drawing.Size(240, 35);
             this.txtTitleSave.TabIndex = 6;
+            this.txtTitleSave.Leave += new System.EventHandler(this.txtTitleSave_Leave);
             // 
             // txtId
             // 
@@ -194,7 +199,7 @@
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(240, 35);
             this.txtId.TabIndex = 5;
-            this.txtId.Text = "添加时无编号";
+            this.txtId.Text = "Empty";
             // 
             // label7
             // 
@@ -237,6 +242,7 @@
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(1096, 856);
             this.dgvList.TabIndex = 0;
+            this.dgvList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellDoubleClick);
             // 
             // Column5
             // 
@@ -297,6 +303,7 @@
             this.btnSearchAll.TabIndex = 5;
             this.btnSearchAll.Text = "显示全部";
             this.btnSearchAll.UseVisualStyleBackColor = true;
+            this.btnSearchAll.Click += new System.EventHandler(this.btnSearchAll_Click);
             // 
             // label2
             // 
@@ -373,6 +380,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1691, 997);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);

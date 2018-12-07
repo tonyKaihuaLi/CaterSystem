@@ -12,9 +12,26 @@ namespace CaterBll
     {
         private DishInfoDal dishInfoDal= new DishInfoDal();
 
-        public List<DishInfo> GetList()
+        public List<DishInfo> GetList(Dictionary<string,string> dictionary)
         {
-            return dishInfoDal.GetList();
+            return dishInfoDal.GetList(dictionary);
+        }
+
+        public bool Add(DishInfo dishInfo)
+        {
+            return dishInfoDal.Insert(dishInfo) > 0;
+        }
+
+        public bool Update(DishInfo dishInfo)
+        {
+            return dishInfoDal.Update(dishInfo) > 0;
+;       }
+
+        public bool Delete(int id)
+        {
+            return dishInfoDal.Delete(id) > 0;
         }
     }
+
+    
 }
