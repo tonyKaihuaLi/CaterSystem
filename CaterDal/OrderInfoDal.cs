@@ -178,7 +178,7 @@ namespace CaterDal
                     SQLiteParameter parameter = new SQLiteParameter("@oid",orderid);
                     cmd.CommandText = sql;
                     cmd.Parameters.Clear();
-                    cmd.Parameters.AddRange(parameters);
+                    cmd.Parameters.Add(parameter);
                     result += cmd.ExecuteNonQuery();
                     tran.Commit();
                 }

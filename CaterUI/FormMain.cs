@@ -171,6 +171,7 @@ namespace CaterUI
 
             FormOrderCheck formOrderCheck= new FormOrderCheck();
             formOrderCheck.Tag = orderID;
+            formOrderCheck.Refresh += LoadHallInfo;
             formOrderCheck.Show();
         }
 

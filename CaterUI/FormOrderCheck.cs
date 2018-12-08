@@ -14,10 +14,13 @@ namespace CaterUI
 {
     public partial class FormOrderCheck : Form
     {
+        
         public FormOrderCheck()
         {
             InitializeComponent();
         }
+
+        public event Action Refresh;
 
         private void label6_Click(object sender, EventArgs e)
         {
@@ -104,7 +107,9 @@ namespace CaterUI
             if (orderInfoBll.Check(cbkMoney.Checked, int.Parse(txtId.Text), Convert.ToDecimal(lblPayMoneyDiscount.Text),
                 orderId, Convert.ToDecimal(lblDiscount.Text)))
             {
-                MessageBox.Show("succeed");
+                //MessageBox.Show("succeed");
+                Refresh();
+                this.Close();
             }
         }
 
@@ -112,5 +117,6 @@ namespace CaterUI
         {
             this.Close();
         }
+
     }
 }
