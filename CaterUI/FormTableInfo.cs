@@ -20,6 +20,8 @@ namespace CaterUI
         }
         private TableInfoBll tableInfoBll=new TableInfoBll();
 
+        public event Action Refresh;
+
         private void FormTableInfo_Load(object sender, EventArgs e)
         {
             LoadListSearch();
@@ -131,6 +133,8 @@ namespace CaterUI
             rbFree.Checked = true;
             btnSave.Text = "Add";
 
+            Refresh();
+
         }
 
         private void txtId_TextChanged(object sender, EventArgs e)
@@ -164,6 +168,7 @@ namespace CaterUI
             }
 
             btnSave.Text = "Update";
+            Refresh();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -178,6 +183,8 @@ namespace CaterUI
                     LoadList();
                 }
             }
+
+            Refresh();
         }
 
         private void btnAddHall_Click(object sender, EventArgs e)
@@ -186,6 +193,8 @@ namespace CaterUI
             formHallInfo.MyUpdateForm += LoadListSearch;
             formHallInfo.MyUpdateForm += LoadList;
             formHallInfo.Show();
+
+            Refresh();
         }
     }
 }

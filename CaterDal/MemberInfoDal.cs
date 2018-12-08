@@ -13,7 +13,7 @@ namespace CaterDal
     {
         public List<MemberInfo> GetList(Dictionary<string, string> dic)
         {
-            string sql = "select mi.*,mti.mTitle as MTypeTitle " +
+            string sql = "select mi.*,mti.mTitle as MTypeTitle, mti.mdiscount " +
                          "from MemberInfo as mi " +
                          "inner join MemberTypeInfo as mti " +
                          "on mi.mTypeId=mti.mid " +
@@ -23,7 +23,7 @@ namespace CaterDal
             {
                 foreach (var pair in dic)
                 {
-                    sql += " and " + pair.Key + "  like '%"+pair.Value+"%'";
+                    sql += " and mi." + pair.Key + "  like '%"+pair.Value+"%'";
 
                 }
             }
@@ -40,7 +40,8 @@ namespace CaterDal
                     MPhone = VARIABLE["mphone"].ToString(),
                     MMoney = Convert.ToDecimal(VARIABLE["mmoney"]),
                     MTypeId = Convert.ToInt32(VARIABLE["MTypeID"]),
-                    MTypeTitle = VARIABLE["MTypeTitle"].ToString()
+                    MTypeTitle = VARIABLE["MTypeTitle"].ToString(),
+                    MDiscount = Convert.ToDecimal(VARIABLE["mdiscount"])
                 });
                 
             }

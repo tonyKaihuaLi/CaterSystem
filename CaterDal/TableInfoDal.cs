@@ -85,5 +85,18 @@ namespace CaterDal
             SQLiteParameter parameter=new SQLiteParameter("@id",id);
             return SqliteHelper.ExecuteNonQuery(sql, parameter);
         }
+
+        //public int SetState(int tableId, bool isFree)
+        //{
+        //    string sql = "update tableinfo set tisfree=@tisfree where tid=@tid";
+        //    SQLiteParameter[] parameters =
+        //    {
+        //        new SQLiteParameter("@tid", tableId),
+        //        new SQLiteParameter("@isfree", isFree?1:0),
+        //    };
+
+        //    return SqliteHelper.ExecuteNonQuery(sql, parameters);
+        //}
+
     }
 }

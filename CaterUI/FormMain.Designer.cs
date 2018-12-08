@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuManagerInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMemberInfo = new System.Windows.Forms.ToolStripMenuItem();
@@ -35,6 +37,8 @@
             this.menuDishInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuOrderInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuLogout = new System.Windows.Forms.ToolStripMenuItem();
+            this.tcHallInfo = new System.Windows.Forms.TabControl();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +76,7 @@
             this.menuMemberInfo.Name = "menuMemberInfo";
             this.menuMemberInfo.Size = new System.Drawing.Size(338, 69);
             this.menuMemberInfo.Text = "Membership";
+            this.menuMemberInfo.Click += new System.EventHandler(this.menuMemberInfo_Click);
             // 
             // menuTableInfo
             // 
@@ -80,6 +85,7 @@
             this.menuTableInfo.Name = "menuTableInfo";
             this.menuTableInfo.Size = new System.Drawing.Size(181, 69);
             this.menuTableInfo.Text = "Table";
+            this.menuTableInfo.Click += new System.EventHandler(this.menuTableInfo_Click);
             // 
             // menuDishInfo
             // 
@@ -88,6 +94,7 @@
             this.menuDishInfo.Name = "menuDishInfo";
             this.menuDishInfo.Size = new System.Drawing.Size(195, 69);
             this.menuDishInfo.Text = "Order";
+            this.menuDishInfo.Click += new System.EventHandler(this.menuDishInfo_Click);
             // 
             // menuOrderInfo
             // 
@@ -96,6 +103,7 @@
             this.menuOrderInfo.Name = "menuOrderInfo";
             this.menuOrderInfo.Size = new System.Drawing.Size(292, 69);
             this.menuOrderInfo.Text = "Check Out";
+            this.menuOrderInfo.Click += new System.EventHandler(this.menuOrderInfo_Click);
             // 
             // menuLogout
             // 
@@ -106,11 +114,29 @@
             this.menuLogout.Text = "Exit";
             this.menuLogout.Click += new System.EventHandler(this.menuLogout_Click);
             // 
+            // tcHallInfo
+            // 
+            this.tcHallInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tcHallInfo.Location = new System.Drawing.Point(0, 73);
+            this.tcHallInfo.Name = "tcHallInfo";
+            this.tcHallInfo.SelectedIndex = 0;
+            this.tcHallInfo.Size = new System.Drawing.Size(1637, 747);
+            this.tcHallInfo.TabIndex = 1;
+            this.tcHallInfo.SelectedIndexChanged += new System.EventHandler(this.tcHallInfo_SelectedIndexChanged);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "desk1.png");
+            this.imageList1.Images.SetKeyName(1, "desk2.png");
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1637, 820);
+            this.Controls.Add(this.tcHallInfo);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
@@ -134,5 +160,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuDishInfo;
         private System.Windows.Forms.ToolStripMenuItem menuOrderInfo;
         private System.Windows.Forms.ToolStripMenuItem menuLogout;
+        private System.Windows.Forms.TabControl tcHallInfo;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
